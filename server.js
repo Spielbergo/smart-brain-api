@@ -31,9 +31,8 @@ app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db) })
 app.put('/image', (req, res) => {image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res) })
 
-const PORT = process.env.PORT
-app.listen(PORT, () => {
-	console.log(`shit works on ${PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+	console.log(`shit works on port ${process.env.PORT}`);
 })
 
 console.log(PORT)
